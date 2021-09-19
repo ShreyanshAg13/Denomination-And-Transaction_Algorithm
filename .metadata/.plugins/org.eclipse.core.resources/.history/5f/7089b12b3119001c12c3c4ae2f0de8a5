@@ -1,0 +1,42 @@
+package demoGL.Denomination;
+
+import java.util.Scanner;
+
+public class Currency {
+	public static void merge(int []denominations, int first, int mid, int last) {
+		int lSize = mid - first+1;
+		int rSize = last - mid;
+		int[] a = new int[lSize];
+		int[] b = new int[rSize];
+		//a=5
+		//b=1
+		
+		
+	}
+	public static void mergeSort(int denominations[], int first , int last ) {
+		//divide
+		//[5 , 1 , 10, 6, 4]
+		int mid;
+		if(first<last) {
+			mid = (first+last)/2;
+			mergeSort(denominations, first, mid);
+			
+			mergeSort(denominations, mid+1, last);
+			merge(denominations,first , mid, last);
+
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Enter number of denomination ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int denominations[] = new int[n];
+		for(int i=0; i<n ; i++) {
+			System.out.println("Enter denominations ");
+			denominations[i] = sc.nextInt();
+		}
+		mergeSort(denominations, 0, denominations.length-1);
+	}
+}

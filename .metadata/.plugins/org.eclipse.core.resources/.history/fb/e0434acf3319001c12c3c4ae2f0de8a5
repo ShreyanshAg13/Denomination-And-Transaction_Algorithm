@@ -1,0 +1,5 @@
+package demoGL.Denomination;
+
+public class Currency {
+
+}
